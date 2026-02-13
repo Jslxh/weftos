@@ -12,7 +12,7 @@ const errorHandler = require("./middleware/errorMiddleware");
 
 // CORS Configuration
 const allowedOrigins = process.env.ALLOWED_ORIGINS 
-  ? process.env.ALLOWED_ORIGINS.split(",") 
+  ? process.env.ALLOWED_ORIGINS.split(",").map(origin => origin.trim())
   : [];
 
 app.use(cors({
