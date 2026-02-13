@@ -1,16 +1,23 @@
 # WeftOS - Workflow Operating System
 
-WeftOS is a professional SaaS platform for designing, executing, and monitoring complex business workflows. Built with a modern MERN stack, it features a dynamic workflow engine, role-based access control, and real-time analytics.
+WeftOS is a modern SaaS platform for designing, executing, and monitoring dynamic business workflows. It connects configurable workflow definitions with a centralized execution engine, enabling secure and scalable process automation.
 
-## 🚀 Features
+The system is built using a full MERN stack and follows a clean layered architecture suitable for production-grade deployment.
 
-- **Visual Workflow Engine**: Define steps and transitions dynamically.
-- **Role-Based Access Control (RBAC)**: secure execution flow with Admin, Manager, and Employee roles.
+## Live Demo
+
+Frontend: https://weftos.vercel.app  
+Backend API: https://weftos-backend.vercel.app
+
+## Features
+
+- **Dynamic Workflow Engine**: Define steps and transitions dynamically.
+- **Role-Based Access Control (RBAC)**: Secure execution flow with Admin, Manager, and Employee roles.
 - **Dashboard Analytics**: Real-time insights into workflow performance and completion rates.
 - **Instance Management**: Track every execution step with audit logs.
 - **Claymorphism UI**: Modern, clean, and accessible interface.
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Backend
 
@@ -26,26 +33,46 @@ WeftOS is a professional SaaS platform for designing, executing, and monitoring 
 - **Axios**: Interceptor-based API communication.
 - **Recharts / Lucide**: Visualization and iconography.
 
-## 📦 Deployment
+## Deployment
 
-### Backend (Render/Heroku/Railway)
-
-1.  Set environment variables:
-    - `PORT=5000`
-    - `MONGO_URI=...`
-    - `JWT_SECRET=...`
-    - `FRONTEND_URL=https://your-frontend-domain.com`
-2.  Build command: `npm install`
-3.  Start command: `node server.js`
-
-### Frontend (Vercel/Netlify)
+### Backend
 
 1.  Set environment variables:
-    - `VITE_API_URL=https://your-backend-domain.com/api/v1`
-2.  Build command: `npm run build`
-3.  Output directory: `dist`
+    ```bash
+    PORT=5000
+    MONGO_URI=your_mongodb_connection_string
+    JWT_SECRET=your_secret_key
+    FRONTEND_URL=http://localhost:5173
+    ```
+    
+2.  Build command:
+   ```bash
+   npm install
+   ```
 
-## 🏗 Architecture
+3.  Start command:
+   ```bash
+    node server.js
+   ```
+
+### Frontend
+
+1.  Set environment variables:
+    ```bash
+    VITE_API_URL=https://your-backend-domain.com/api/v1
+    ```
+    
+2.  Build command:
+    ```bash
+       npm run build
+    ```
+    
+3.  Output directory:
+   ```bash
+    dist
+   ```
+
+## Architecture
 
 WeftOS follows a layered architecture:
 
@@ -54,7 +81,7 @@ WeftOS follows a layered architecture:
 - **Business Logic Layer**: Express controllers handling validation, authorization, and workflow rules.
 - **Data Access Layer**: Mongoose models defining the schema and relationships.
 
-## 🤝 Contribution
+## Contribution
 
 1.  Fork the repo.
 2.  Create a feature branch.
@@ -62,4 +89,4 @@ WeftOS follows a layered architecture:
 
 ---
 
-_Built as a showcase of production-grade SaaS architecture._
+_Built as a showcase of scalable SaaS architecture and workflow engine implementation._
