@@ -1,7 +1,7 @@
 const app = require("../app");
 const connectDB = require("../config/db");
 
-// Establish DB connection before handling requests
-connectDB();
-
-module.exports = app;
+module.exports = async (req, res) => {
+  await connectDB();
+  return app(req, res);
+};
