@@ -10,9 +10,26 @@ const userRoutes = require("./routes/userRoutes");
 const workflowDefinitionRoutes = require("./routes/workflowDefinitionRoutes");
 const errorHandler = require("./middleware/errorMiddleware");
 
+// CORS Configuration
+const allowedOrigins = process.env.ALLOWED_ORIGINS 
+  ? process.env.ALLOWED_ORIGINS.split(",") 
+  : [];
+
 app.use(cors({
-  origin: "*",
-  // credentials: true // Not needed for Bearer token auth, and conflicts with origin: *
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    // In dev, allow all if ALLOWED_ORIGINS is not set
+    if (allowedOrigins.length === 0) return callback(null, true);
+
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
 }))
 app.use(express.json())
 // Health check
