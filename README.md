@@ -39,37 +39,37 @@ Backend API: https://weftos-backend.vercel.app
 
 #### 1. Set environment variables:
 ```bash
-    PORT=5000
-    MONGO_URI=your_mongodb_connection_string
-    JWT_SECRET=your_secret_key
-    FRONTEND_URL=http://localhost:5173
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+FRONTEND_URL=http://localhost:5173
 ```
     
 #### 2.  Build command:
 ```bash
-   npm install
+npm install
 ```
 
 #### 3.  Start command:
 ```bash
-    node server.js
+node server.js
 ```
 
 ### Frontend
 
 #### 1.  Set environment variables:
 ```bash
-    VITE_API_URL=https://your-backend-domain.com/api/v1
+VITE_API_URL=https://your-backend-domain.com/api/v1
  ```
     
 #### 2.  Build command:
 ```bash
-       npm run build
- ```
+npm run build
+```
     
 #### 3.  Output directory:
 ```bash
-    dist
+dist
 ```
 
 ## Architecture
